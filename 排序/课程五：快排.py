@@ -6,6 +6,7 @@
 # 直到low与high重合，代表找到54存放位置；左边均小于54，右边均大于54
 # 当54排序好后，分为两个部分继续执行，[26,20,17,44,31] 和[77,55,93]
 
+
 def quick_sort(alist, first, last):
     if first >= last:
         return alist
@@ -18,6 +19,8 @@ def quick_sort(alist, first, last):
         # 特殊情况：当有数值与mid_value相等时，需要把等于放到其中一边
         while low < high and alist[high] >= mid_value:
             # 这里的low<high是控制继续向左走
+            # 当满足条件时 继续走
+            # 不满足条件时，外部替换
             high -= 1
         alist[low] = alist[high]
         # low+=1
